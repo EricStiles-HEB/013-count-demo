@@ -1,17 +1,17 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "2.70.0"
     }
   }
 }
 
-variable "aws_region" {} 
+variable "aws_region" {}
 
 provider "aws" {
   region = var.aws_region
-  alias = "hashi"  
+  alias  = "hashi"
 }
 
 module "s3-module" {
@@ -19,4 +19,6 @@ module "s3-module" {
   providers = {
     aws = aws.hashi
   }
+
+  count = 2
 }

@@ -1,11 +1,5 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "2.70.0"
-      alias = hashi
-    }
-  }
+provider "aws" {
+  alias = "hashi"  
 }
 
 module "s3-module" {

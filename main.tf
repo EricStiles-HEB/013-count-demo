@@ -16,5 +16,4 @@ module "s3-module" {
   providers = {
     aws = aws.hashi
   }
-  count = 5
 }

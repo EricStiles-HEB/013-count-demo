@@ -1,4 +1,10 @@
 terraform {
+  required_version = "~> 0.13.0"
+  backend "remote" {
+    organization = "TFTMM"
+    workspaces { name = "count-demo" }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -20,5 +26,5 @@ module "s3-module" {
     aws = aws.hashi
   }
 
-  count = 2
+  count = 5
 }
